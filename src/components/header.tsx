@@ -9,13 +9,27 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const navLinks = [
   { href: '#', label: 'Home' },
   { href: '/', label: 'About Us' },
-  { href: '#', label: 'Our Offerings' },
-  { href: '#', label: 'Careers' },
+  { href: '#', label: 'Services' },
+  { href: '#', label: 'Pricing' },
+  { href: '#', label: 'Payment' },
+  { href: '#', label: 'Investor Charter' },
   { href: '#', label: 'Contact Us' },
+  { href: '#', label: 'Blog' },
+];
+
+const moreLinks = [
+    { href: '#', label: 'Link 1' },
+    { href: '#', label: 'Link 2' },
 ];
 
 export default function Header() {
@@ -67,7 +81,7 @@ export default function Header() {
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled ? "bg-black/60 shadow-md backdrop-blur-xl" : "bg-transparent"
+      isScrolled ? "bg-black/80 shadow-md backdrop-blur-xl" : "bg-transparent"
     )}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -85,7 +99,7 @@ export default function Header() {
             )}
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map(link => (
               <NavLink 
                 key={link.label}
@@ -93,6 +107,23 @@ export default function Header() {
                 label={link.label}
               />
             ))}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="relative group font-headline text-base uppercase tracking-wider transition-colors text-white hover:text-accent font-normal focus-visible:ring-0 focus-visible:ring-offset-0 p-0">
+                  More
+                  <span className={cn(
+                      "absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ease-in-out w-0 group-hover:w-full"
+                  )}></span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-black/80 border-gray-700">
+                {moreLinks.map(link => (
+                    <DropdownMenuItem key={link.label} asChild>
+                        <NavLink href={link.href} label={link.label} className="text-white"/>
+                    </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
           <div className="md:hidden">
@@ -104,7 +135,7 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[80vw] bg-background">
                  <div className="mt-12 flex flex-col gap-4">
-                    {navLinks.map(link => <MobileNavLink key={link.href} {...link} />)}
+                    {[...navLinks, ...moreLinks].map(link => <MobileNavLink key={link.href} {...link} />)}
                  </div>
               </SheetContent>
             </Sheet>

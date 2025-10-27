@@ -9,9 +9,12 @@ export default function Footer() {
   const quickLinks = [
     { href: '#', label: 'Home' },
     { href: '/', label: 'About Us' },
-    { href: '#', label: 'Our Offerings' },
-    { href: '#', label: 'Careers' },
+    { href: '#', label: 'Services' },
+    { href: '#', label: 'Pricing' },
+    { href: '#', label: 'Payment' },
+    { href: '#', label: 'Investor Charter' },
     { href: '#', label: 'Contact Us' },
+    { href: '#', label: 'Blog' },
   ];
 
   const offeringsLinks = [
