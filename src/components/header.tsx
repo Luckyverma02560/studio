@@ -58,8 +58,8 @@ export default function Header() {
     return (
       <Link href={href} className={cn(
         "relative group font-headline text-sm uppercase tracking-wider transition-colors whitespace-nowrap",
-        "text-white hover:text-accent font-normal",
-        isActive && "text-accent",
+        "text-white hover:text-accent",
+        isActive ? "text-accent" : "font-normal",
         className
       )}>
         {label}
@@ -89,7 +89,7 @@ export default function Header() {
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled ? "bg-black/70 shadow-md backdrop-blur-xl" : "bg-transparent"
+      isScrolled ? "bg-black/40 shadow-md backdrop-blur-[20px]" : "bg-transparent"
     )}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -100,8 +100,8 @@ export default function Header() {
                   src={logo.imageUrl}
                   alt={logo.description}
                   data-ai-hint={logo.imageHint}
-                  width={42}
-                  height={42}
+                  width={40}
+                  height={40}
                   priority
                   className={cn('brightness-0 invert rounded-full')}
                 />
