@@ -35,8 +35,9 @@ export default function Header() {
     const isActive = pathname === href;
     return (
       <Link href={href} className={cn(
-        "relative group text-sm font-bold uppercase tracking-wider transition-colors",
-        isActive ? "text-accent" : "text-white hover:text-accent",
+        "relative group font-headline text-base uppercase tracking-wider transition-colors",
+        isScrolled ? "text-white hover:text-accent" : "text-white hover:text-accent",
+        isActive && "text-accent",
         className
       )}>
         {label}
