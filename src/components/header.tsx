@@ -59,7 +59,7 @@ export default function Header() {
       <Link href={href} className={cn(
         "relative group font-headline text-sm uppercase tracking-wider transition-colors whitespace-nowrap",
         "text-white hover:text-accent",
-        isActive ? "text-accent" : "font-normal",
+        isActive ? "text-accent font-bold" : "font-normal",
         className
       )}>
         {label}
@@ -119,7 +119,7 @@ export default function Header() {
             ))}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative group font-headline text-sm uppercase tracking-wider transition-colors text-white hover:text-accent font-normal focus-visible:ring-0 focus-visible:ring-offset-0 p-0">
+                <Button variant="ghost" className="relative group font-headline text-sm uppercase tracking-wider transition-colors text-white hover:text-accent font-normal focus-visible:ring-0 focus-visible:ring-offset-0 p-0 hover:bg-transparent">
                   More
                   <span className={cn(
                       "absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ease-in-out w-0 group-hover:w-full"
@@ -131,7 +131,7 @@ export default function Header() {
                     <ul className="space-y-2">
                         {moreLinksCol1.map(link => (
                             <li key={link.label}>
-                                <DropdownMenuItem asChild>
+                                <DropdownMenuItem asChild className="p-0 focus:bg-transparent">
                                     <NavLink href={link.href} label={link.label} className="text-white"/>
                                 </DropdownMenuItem>
                             </li>
@@ -140,7 +140,7 @@ export default function Header() {
                     <ul className="space-y-2">
                         {moreLinksCol2.map(link => (
                              <li key={link.label}>
-                                <DropdownMenuItem asChild>
+                                <DropdownMenuItem asChild className="p-0 focus:bg-transparent">
                                     <NavLink href={link.href} label={link.label} className="text-white"/>
                                 </DropdownMenuItem>
                             </li>
