@@ -100,10 +100,10 @@ export default function Header() {
                   src={logo.imageUrl}
                   alt={logo.description}
                   data-ai-hint={logo.imageHint}
-                  width={170}
+                  width={42}
                   height={42}
                   priority
-                  className={cn('brightness-0 invert')}
+                  className={cn('brightness-0 invert rounded-full')}
                 />
               )}
             </Link>

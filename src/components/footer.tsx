@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export default function Footer() {
   const logo = PlaceHolderImages.find(p => p.id === 'logo');
@@ -43,9 +44,9 @@ export default function Footer() {
                   src={logo.imageUrl}
                   alt={logo.description}
                   data-ai-hint={logo.imageHint}
-                  width={180}
-                  height={45}
-                  className="brightness-0 invert mb-4"
+                  width={40}
+                  height={40}
+                  className={cn('brightness-0 invert mb-4 rounded-full')}
                 />
               </Link>
             )}
