@@ -22,10 +22,7 @@ const teamMembers = [
 ];
 
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <>
-    <h2 className="text-3xl md:text-4xl font-bold text-primary">{children}</h2>
-    <div className="w-24 h-1 bg-accent my-6"></div>
-  </>
+  <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">{children}</h2>
 );
 
 export default function Home() {
