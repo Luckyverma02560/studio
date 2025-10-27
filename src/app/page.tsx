@@ -43,7 +43,6 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
           <AnimateOnScroll>
             <h1 className="text-4xl md:text-6xl font-bold">About Us</h1>
-            <p className="mt-4 text-lg">Home / About Us</p>
           </AnimateOnScroll>
         </div>
       </section>
