@@ -35,12 +35,15 @@ export default function Header() {
     const isActive = pathname === href;
     return (
       <Link href={href} className={cn(
-        "relative text-sm font-bold uppercase tracking-wider transition-colors hover:text-accent",
-        isActive ? "text-accent" : "text-white",
+        "relative group text-sm font-bold uppercase tracking-wider transition-colors",
+        isActive ? "text-accent" : "text-white hover:text-accent",
         className
       )}>
         {label}
-        {isActive && <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-accent"></span>}
+        <span className={cn(
+            "absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ease-in-out",
+            isActive ? "w-full" : "w-0 group-hover:w-full"
+        )}></span>
       </Link>
     );
   };
@@ -63,7 +66,7 @@ export default function Header() {
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled ? "bg-black/30 shadow-md" : "bg-transparent"
+      isScrolled ? "bg-black/30 shadow-md backdrop-blur-sm" : "bg-transparent"
     )}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
