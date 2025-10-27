@@ -36,7 +36,7 @@ export default function Header() {
     return (
       <Link href={href} className={cn(
         "relative text-sm font-bold uppercase tracking-wider transition-colors hover:text-accent",
-        isActive ? "text-accent" : "text-primary-foreground",
+        isActive ? "text-accent" : "text-white",
         className
       )}>
         {label}
@@ -87,7 +87,6 @@ export default function Header() {
                 key={link.label}
                 href={link.href}
                 label={link.label}
-                className={cn('text-white hover:text-accent')}
               />
             ))}
           </nav>
