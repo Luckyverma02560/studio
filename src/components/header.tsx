@@ -63,7 +63,7 @@ export default function Header() {
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled ? "bg-background shadow-md" : "bg-transparent"
+      isScrolled ? "bg-black/30 shadow-md" : "bg-transparent"
     )}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -76,7 +76,7 @@ export default function Header() {
                 width={170}
                 height={42}
                 priority
-                className={cn(!isScrolled && 'brightness-0 invert')}
+                className={cn('brightness-0 invert')}
               />
             )}
           </Link>
@@ -87,7 +87,7 @@ export default function Header() {
                 key={link.label}
                 href={link.href}
                 label={link.label}
-                className={cn(!isScrolled && 'text-white hover:text-accent', isScrolled && 'text-primary hover:text-accent')}
+                className={cn('text-white hover:text-accent')}
               />
             ))}
           </nav>
@@ -95,7 +95,7 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn(!isScrolled && 'text-white hover:text-accent', isScrolled && 'text-primary hover:text-accent')}>
+                <Button variant="ghost" size="icon" className={cn('text-white hover:text-accent')}>
                   <Menu size={28} />
                 </Button>
               </SheetTrigger>
