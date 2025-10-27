@@ -27,10 +27,18 @@ const navLinks = [
   { href: '#', label: 'Blog' },
 ];
 
-const moreLinks = [
-    { href: '#', label: 'Link 1' },
-    { href: '#', label: 'Link 2' },
+const moreLinksCol1 = [
+    { href: '#', label: 'Complaints' },
+    { href: '#', label: 'Disclaimer' },
+    { href: '#', label: 'Disclosure' },
 ];
+
+const moreLinksCol2 = [
+    { href: '#', label: 'Performance & Reports' },
+    { href: '#', label: 'Refund Policy' },
+    { href: '#', label: 'Terms & Conditions' },
+];
+
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,7 +57,7 @@ export default function Header() {
     const isActive = pathname === href;
     return (
       <Link href={href} className={cn(
-        "relative group font-headline text-base uppercase tracking-wider transition-colors",
+        "relative group font-headline text-sm uppercase tracking-wider transition-colors whitespace-nowrap",
         "text-white hover:text-accent font-normal",
         isActive && "text-accent",
         className
@@ -81,25 +89,27 @@ export default function Header() {
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled ? "bg-black/80 shadow-md backdrop-blur-xl" : "bg-transparent"
+      isScrolled ? "bg-black/70 shadow-md backdrop-blur-xl" : "bg-transparent"
     )}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center">
-            {logo && (
-              <Image
-                src={logo.imageUrl}
-                alt={logo.description}
-                data-ai-hint={logo.imageHint}
-                width={170}
-                height={42}
-                priority
-                className={cn('brightness-0 invert')}
-              />
-            )}
-          </Link>
+          <div className="flex-1">
+            <Link href="/" className="flex items-center">
+              {logo && (
+                <Image
+                  src={logo.imageUrl}
+                  alt={logo.description}
+                  data-ai-hint={logo.imageHint}
+                  width={170}
+                  height={42}
+                  priority
+                  className={cn('brightness-0 invert')}
+                />
+              )}
+            </Link>
+          </div>
 
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex flex-1 justify-center items-center space-x-6">
             {navLinks.map(link => (
               <NavLink 
                 key={link.label}
@@ -109,24 +119,39 @@ export default function Header() {
             ))}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative group font-headline text-base uppercase tracking-wider transition-colors text-white hover:text-accent font-normal focus-visible:ring-0 focus-visible:ring-offset-0 p-0">
+                <Button variant="ghost" className="relative group font-headline text-sm uppercase tracking-wider transition-colors text-white hover:text-accent font-normal focus-visible:ring-0 focus-visible:ring-offset-0 p-0">
                   More
                   <span className={cn(
                       "absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ease-in-out w-0 group-hover:w-full"
                   )}></span>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-black/80 border-gray-700">
-                {moreLinks.map(link => (
-                    <DropdownMenuItem key={link.label} asChild>
-                        <NavLink href={link.href} label={link.label} className="text-white"/>
-                    </DropdownMenuItem>
-                ))}
+              <DropdownMenuContent className="bg-black/70 border-gray-700 p-4 min-w-[30rem]">
+                <div className="grid grid-cols-2 gap-x-8">
+                    <ul className="space-y-2">
+                        {moreLinksCol1.map(link => (
+                            <li key={link.label}>
+                                <DropdownMenuItem asChild>
+                                    <NavLink href={link.href} label={link.label} className="text-white"/>
+                                </DropdownMenuItem>
+                            </li>
+                        ))}
+                    </ul>
+                    <ul className="space-y-2">
+                        {moreLinksCol2.map(link => (
+                             <li key={link.label}>
+                                <DropdownMenuItem asChild>
+                                    <NavLink href={link.href} label={link.label} className="text-white"/>
+                                </DropdownMenuItem>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
           </nav>
 
-          <div className="md:hidden">
+          <div className="md:hidden flex-1 flex justify-end">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className={cn('text-white hover:text-accent')}>
@@ -135,7 +160,7 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[80vw] bg-background">
                  <div className="mt-12 flex flex-col gap-4">
-                    {[...navLinks, ...moreLinks].map(link => <MobileNavLink key={link.href} {...link} />)}
+                    {[...navLinks, ...moreLinksCol1, ...moreLinksCol2].map(link => <MobileNavLink key={link.href} {...link} />)}
                  </div>
               </SheetContent>
             </Sheet>
