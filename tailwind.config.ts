@@ -12,15 +12,16 @@ export default {
       fontFamily: {
         body: ['"PT Sans"', 'sans-serif'],
         headline: ['"Playfair Display"', 'serif'],
-        'headline-display': ['"Cinzel"', 'serif'],
+        'headline-display': ['"Playfair Display"', 'serif'],
         display: ['"Italiana"', 'serif'],
         code: ['monospace'],
         inter: ['"Inter"', 'sans-serif'],
       },
       colors: {
-        'gold-accent': '#C7A45B',
-        'subtle-text': '#B6B6B8',
-        'heading-text': '#E8E8E8',
+        'gold-accent': 'hsl(var(--accent))',
+        'subtle-text': 'hsl(var(--muted-foreground))',
+        'heading-text': 'hsl(var(--foreground))',
+        'secondary-panel': '#16171A',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -47,7 +48,7 @@ export default {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
         },
-        'bright-accent': 'hsl(var(--bright-accent))',
+        'bright-accent': 'hsl(var(--accent))',
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
@@ -98,11 +99,11 @@ export default {
         'fade-in-up': {
           '0%': {
             opacity: '0',
-            transform: 'translateY(20px)',
+            transform: 'translateY(30px) scale(0.98)',
           },
           '100%': {
             opacity: '1',
-            transform: 'translateY(0)',
+            transform: 'translateY(0) scale(1)',
           },
         },
       },
@@ -111,6 +112,9 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in-up': 'fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
       },
+      perspective: {
+        '1000': '1000px',
+      }
     },
   },
   plugins: [require('tailwindcss-animate')],

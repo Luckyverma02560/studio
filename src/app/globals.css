@@ -8,31 +8,25 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 96.1%; /* #F5F5F5 */
-    --foreground: 0 0% 13.3%; /* #222222 */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 13.3%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 13.3%;
-    --primary: 0 0% 13.3%; /* #222222 */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 92%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 45 60% 42%; /* #A7882C - Luxor Gold */
-    --bright-accent: 45 70% 50%; /* #C8A341 - Brighter Luxor Gold */
-    --accent-foreground: 0 0% 13.3%;
+    --background: 220 10% 8%; /* #121315 */
+    --foreground: 240 4% 90%; /* #E6E6E6 */
+    --card: 230 8% 12%; /* #1D1E22 */
+    --card-foreground: 240 4% 90%;
+    --popover: 230 8% 12%;
+    --popover-foreground: 240 4% 90%;
+    --primary: 240 4% 90%;
+    --primary-foreground: 220 10% 8%;
+    --secondary: 228 6% 16%; /* #26282B */
+    --secondary-foreground: 240 4% 90%;
+    --muted: 228 6% 16%;
+    --muted-foreground: 240 3% 67%; /* #A7A8AD */
+    --accent: 45 60% 57%; /* #C7A45B */
+    --accent-foreground: 220 10% 8%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 45 60% 42%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --border: 228 6% 25%;
+    --input: 228 6% 25%;
+    --ring: 45 60% 57%;
     --radius: 0.5rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -43,32 +37,27 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
-    --background: 0 0% 13.3%; /* #222222 */
-    --foreground: 0 0% 96.1%; /* #F5F5F5 */
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 96.1%;
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 96.1%;
-    --primary: 0 0% 96.1%; /* #F5F5F5 */
-    --primary-foreground: 0 0% 13.3%;
-    --secondary: 0 0% 20%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 45 60% 42%; /* #A7882C - Luxor Gold */
-    --bright-accent: 45 70% 50%; /* #C8A341 - Brighter Luxor Gold */
-    --accent-foreground: 0 0% 13.3%;
+    --background: 220 10% 8%;
+    --foreground: 240 4% 90%;
+    --card: 230 8% 12%;
+    --card-foreground: 240 4% 90%;
+    --popover: 230 8% 12%;
+    --popover-foreground: 240 4% 90%;
+    --primary: 240 4% 90%;
+    --primary-foreground: 220 10% 8%;
+    --secondary: 228 6% 16%;
+    --secondary-foreground: 240 4% 90%;
+    --muted: 228 6% 16%;
+    --muted-foreground: 240 3% 67%;
+    --accent: 45 60% 57%;
+    --accent-foreground: 220 10% 8%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 25%;
-    --input: 0 0% 25%;
-    --ring: 45 60% 42%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --border: 228 6% 25%;
+    --input: 228 6% 25%;
+    --ring: 45 60% 57%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -90,15 +79,29 @@ body {
 }
 
 @layer utilities {
-  .animation-delay-200 {
-    animation-delay: 200ms;
-  }
-  .animation-delay-400 {
-    animation-delay: 400ms;
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+
+  .text-balance { text-wrap: balance; }
+
+  .bg-gradient-angled {
+    background: linear-gradient(135deg, #0E0E10, #1A1B1D);
   }
 
-  .text-balance {
-    text-wrap: balance;
+  .section-label {
+    @apply font-headline-display uppercase text-gold-accent;
+    font-size: clamp(1.5rem, 2.5vw, 2.8rem);
+  }
+
+  .section-heading {
+    @apply font-headline-display font-semibold text-heading-text;
+    letter-spacing: 1.5px;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+  
+  .section-subheading {
+    @apply font-inter text-muted-foreground max-w-3xl mx-auto;
   }
 }
 
@@ -194,10 +197,37 @@ body {
 .gold-divider {
   @apply bg-gold-accent;
   width: 0;
+  box-shadow: 0 0 10px rgba(199, 164, 91, 0.4);
   animation: expand-divider 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
 }
 
 @keyframes expand-divider {
   from { width: 0; }
   to { width: 8rem; } /* 128px */
+}
+
+/* Heading light sweep */
+.heading-sweep {
+    position: relative;
+    overflow: hidden;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-color: currentColor;
+}
+.heading-sweep::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: sweep-text 2.5s ease-in-out forwards;
+    transform: translateX(-100%);
+}
+@keyframes sweep-text {
+    to {
+        transform: translateX(100%);
+    }
 }
