@@ -9,8 +9,8 @@ export const WhoWeAreCard = () => {
         const rect = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        const rotateX = (y / rect.height - 0.5) * -6; // 3 degrees max tilt
-        const rotateY = (x / rect.width - 0.5) * 6; // 3 degrees max tilt
+        const rotateX = (y / rect.height - 0.5) * -12; // Increased from -6 to -12
+        const rotateY = (x / rect.width - 0.5) * 12; // Increased from 6 to 12
         setTransform(`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
     };
 
