@@ -42,7 +42,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/80" />
         <div className="relative z-10">
           <AnimateOnScroll>
-            <h1 className="text-[90px] font-display font-normal text-accent">About Us</h1>
+            <h1 className="text-[90px] font-display font-normal text-bright-accent">About Us</h1>
           </AnimateOnScroll>
         </div>
       </section>

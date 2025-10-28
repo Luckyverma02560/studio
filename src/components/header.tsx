@@ -58,13 +58,13 @@ export default function Header() {
     return (
       <Link href={href} className={cn(
         "relative group font-headline text-sm uppercase tracking-wider transition-colors whitespace-nowrap",
-        "text-white hover:text-accent",
-        isActive ? "text-accent font-bold" : "font-normal",
+        "text-white hover:text-bright-accent",
+        isActive ? "text-bright-accent font-bold" : "font-normal",
         className
       )}>
         {label}
         <span className={cn(
-            "absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ease-in-out",
+            "absolute -bottom-1 left-0 h-0.5 bg-bright-accent transition-all duration-300 ease-in-out",
             isActive ? "w-full" : "w-0 group-hover:w-full"
         )}></span>
       </Link>
@@ -77,7 +77,7 @@ export default function Header() {
         <SheetClose asChild>
           <Link href={href} className={cn(
             "block py-3 text-lg text-center",
-            isActive ? "text-accent" : "text-foreground"
+            isActive ? "text-bright-accent" : "text-foreground"
             )}>
               {label}
           </Link>
@@ -119,10 +119,10 @@ export default function Header() {
             ))}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative group font-headline text-sm uppercase tracking-wider transition-colors text-white hover:text-accent font-normal focus-visible:ring-0 focus-visible:ring-offset-0 p-0 hover:bg-transparent">
+                <Button variant="ghost" className="relative group font-headline text-sm uppercase tracking-wider transition-colors text-white hover:text-bright-accent font-normal focus-visible:ring-0 focus-visible:ring-offset-0 p-0 hover:bg-transparent">
                   More
                   <span className={cn(
-                      "absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ease-in-out w-0 group-hover:w-full"
+                      "absolute -bottom-1 left-0 h-0.5 bg-bright-accent transition-all duration-300 ease-in-out w-0 group-hover:w-full"
                   )}></span>
                 </Button>
               </DropdownMenuTrigger>
@@ -154,7 +154,7 @@ export default function Header() {
           <div className="md:hidden flex-1 flex justify-end">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn('text-white hover:text-accent')}>
+                <Button variant="ghost" size="icon" className={cn('text-white hover:text-bright-accent')}>
                   <Menu size={28} />
                 </Button>
               </SheetTrigger>
