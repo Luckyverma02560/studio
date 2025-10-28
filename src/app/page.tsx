@@ -39,7 +39,7 @@ export default function Home() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10">
           <AnimateOnScroll>
             <h1 className="text-[90px] font-display font-normal text-bright-accent">About Us</h1>
