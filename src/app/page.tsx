@@ -50,7 +50,7 @@ export default function Home() {
       <div className="bg-card">
         <section className="container mx-auto py-16 md:py-24 px-4">
             <AnimateOnScroll>
-                <Card className="bg-[#B4B4B4] p-8 md:p-12 shadow-2xl border-none">
+                <Card className="bg-[#B4B4B4] p-8 md:p-12 shadow-2xl shadow-black border-none">
                     <SectionTitle className="text-center">Who We Are</SectionTitle>
                     <div className="grid md:grid-cols-2 gap-8 text-muted-foreground text-base leading-relaxed">
                         <p>
