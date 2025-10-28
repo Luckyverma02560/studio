@@ -21,14 +21,14 @@ const teamMembers = [
   { id: 'team9', name: 'Poonam P.', role: 'Assistant Manager' },
 ];
 
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">{children}</h2>
+const SectionTitle = ({ children, className }: { children: React.ReactNode, className?: string }) => (
+  <h2 className={`text-3xl md:text-4xl font-bold text-primary mb-6 ${className}`}>{children}</h2>
 );
 
 export default function Home() {
   return (
     <>
-      <section className="relative h-[40vh] md:h-[50vh] w-full">
+      <section className="relative h-[60vh] md:h-[70vh] w-full flex items-center justify-center text-center text-white">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
@@ -39,35 +39,39 @@ export default function Home() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
+        <div className="absolute inset-0 bg-black/80" />
+        <div className="relative z-10">
           <AnimateOnScroll>
             <h1 className="text-4xl md:text-6xl font-bold">About Us</h1>
           </AnimateOnScroll>
         </div>
       </section>
 
-      <div className="bg-card">
-        <section className="container mx-auto py-16 md:py-24 px-4">
+      <section className="relative -mt-32 z-10">
+        <div className="container mx-auto py-16 md:py-24 px-4">
           <AnimateOnScroll>
-            <SectionTitle>Who We Are</SectionTitle>
-            <div className="grid md:grid-cols-2 gap-8 text-muted-foreground text-base leading-relaxed">
-              <p>
-                Demystify Capital Markets is a premier provider of research and
-                analytics (R&A) services for financial institutions across the globe. We
-                provide a broad range of services, including equity research, credit
-                research, investment banking support, and financial modeling.
-              </p>
-              <p>
-                Our team of experienced professionals has a deep understanding of the
-                capital markets and is committed to providing our clients with the
-                highest quality of service. We are headquartered in New Delhi, India,
-                and have a team of over 50 professionals.
-              </p>
-            </div>
+            <Card className="bg-background/80 backdrop-blur-sm p-8 md:p-12 shadow-2xl">
+              <SectionTitle className="text-center">Who We Are</SectionTitle>
+              <div className="grid md:grid-cols-2 gap-8 text-muted-foreground text-base leading-relaxed">
+                <p>
+                  Demystify Capital Markets is a premier provider of research and
+                  analytics (R&A) services for financial institutions across the globe. We
+                  provide a broad range of services, including equity research, credit
+                  research, investment banking support, and financial modeling.
+                </p>
+                <p>
+                  Our team of experienced professionals has a deep understanding of the
+                  capital markets and is committed to providing our clients with the
+                  highest quality of service. We are headquartered in New Delhi, India,
+                  and have a team of over 50 professionals.
+                </p>
+              </div>
+            </Card>
           </AnimateOnScroll>
-        </section>
-
+        </div>
+      </section>
+      
+      <div className="bg-card">
         <section className="container mx-auto pb-16 md:pb-24 px-4">
           <AnimateOnScroll>
             <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
