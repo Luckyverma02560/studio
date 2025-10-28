@@ -6,7 +6,7 @@ import { Linkedin } from 'lucide-react';
 import { AnimateOnScroll } from '@/components/animate-on-scroll';
 import { cn } from '@/lib/utils';
 import { WhoWeAreParticles } from '@/components/who-we-are-particles';
-import { WhoWeAreCard } from '@/components/who-we-are-card';
+import { WhoWeAreSection } from '@/components/who-we-are-section';
 
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'about-us-hero');
@@ -51,15 +51,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* New "Who We Are" Section */}
-      <section className="relative bg-gradient-to-b from-[#0E0E10] to-[#1B1C1E] py-24 md:py-32 overflow-hidden">
-        <WhoWeAreParticles />
-        <div className="relative container mx-auto px-4 z-10">
-            <AnimateOnScroll animationClasses="animate-fade-in-up" once={true}>
-                <WhoWeAreCard />
-            </AnimateOnScroll>
-        </div>
-      </section>
+      <WhoWeAreSection />
       
       <div className="bg-card">
         <section className="container mx-auto pt-16 md:pt-24 px-4">

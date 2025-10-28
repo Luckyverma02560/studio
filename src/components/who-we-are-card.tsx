@@ -1,29 +1,14 @@
 "use client";
-import { useEffect, useRef, useState } from 'react';
 
-export const WhoWeAreCard = () => {
-    const [transform, setTransform] = useState('');
+interface WhoWeAreCardProps {
+    transform: string;
+}
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!e.currentTarget) return;
-        const rect = e.currentTarget.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const rotateX = (y / rect.height - 0.5) * -12; // Increased from -6 to -12
-        const rotateY = (x / rect.width - 0.5) * 12; // Increased from 6 to 12
-        setTransform(`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
-    };
-
-    const handleMouseLeave = () => {
-        setTransform('');
-    };
-
+export const WhoWeAreCard = ({ transform }: WhoWeAreCardProps) => {
     return (
         <div
             className="bg-[rgba(30,30,32,0.65)] backdrop-blur-xl rounded-2xl border border-[rgba(199,164,91,0.3)] shadow-2xl shadow-black/30 text-center p-8 md:p-16 transition-transform duration-300 ease-out"
             style={{ transform: transform }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
         >
             <div className="relative">
                 <div className="light-streak"></div>
