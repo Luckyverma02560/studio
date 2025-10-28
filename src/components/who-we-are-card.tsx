@@ -10,29 +10,27 @@ interface WhoWeAreCardProps {
 
 export const WhoWeAreCard = ({ transform, rotation }: WhoWeAreCardProps) => {
     
-    const shadowX = -rotation.rotateY * 0.5;
-    const shadowY = rotation.rotateX * 0.5;
+    const shadowX = -rotation.rotateY * 0.7;
+    const shadowY = rotation.rotateX * 0.7;
 
-    const textShadowStyle: CSSProperties = {
-        textShadow: `
-            ${shadowX}px ${shadowY}px 15px rgba(0, 191, 255, 0.4),
-            0 0 5px rgba(0, 191, 255, 0.5),
-            0 0 10px rgba(0, 191, 255, 0.4),
-            0 0 20px rgba(0, 191, 255, 0.3),
-            0 0 30px rgba(0, 191, 255, 0.2)
+    const cardStyle: CSSProperties = {
+        transform: transform,
+        boxShadow: `
+            ${shadowX}px ${shadowY}px 30px rgba(0, 191, 255, 0.3),
+            inset 0 0 15px rgba(0, 191, 255, 0.1)
         `
     };
 
     return (
         <div
-            className="bg-[rgba(30,30,32,0.65)] backdrop-blur-xl rounded-2xl border border-[rgba(199,164,91,0.3)] shadow-2xl shadow-black/30 text-center p-8 md:p-16 transition-transform duration-300 ease-out"
-            style={{ transform: transform }}
+            className="bg-[rgba(30,30,32,0.65)] backdrop-blur-xl rounded-2xl border border-[rgba(199,164,91,0.3)] text-center p-8 md:p-16 transition-all duration-100 ease-out"
+            style={cardStyle}
         >
             <div className="relative">
                 <div className="light-streak"></div>
                 <h2 
                     className="font-headline text-5xl md:text-6xl font-bold text-heading-text tracking-[2px] animate-fade-in-up transition-all duration-300 ease-out" 
-                    style={{ ...textShadowStyle, animationDelay: '0.2s' }}
+                    style={{ animationDelay: '0.2s' }}
                 >
                     WHO WE ARE
                 </h2>
