@@ -47,31 +47,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative -mt-20 md:-mt-40 z-10">
-        <div className="container mx-auto py-16 md:py-24 px-4">
-          <AnimateOnScroll>
-            <Card className="bg-background/80 backdrop-blur-sm p-8 md:p-12 shadow-2xl">
-              <SectionTitle className="text-center">Who We Are</SectionTitle>
-              <div className="grid md:grid-cols-2 gap-8 text-muted-foreground text-base leading-relaxed">
-                <p>
-                  Demystify Capital Markets is a premier provider of research and
-                  analytics (R&A) services for financial institutions across the globe. We
-                  provide a broad range of services, including equity research, credit
-                  research, investment banking support, and financial modeling.
-                </p>
-                <p>
-                  Our team of experienced professionals has a deep understanding of the
-                  capital markets and is committed to providing our clients with the
-                  highest quality of service. We are headquartered in New Delhi, India,
-                  and have a team of over 50 professionals.
-                </p>
-              </div>
-            </Card>
-          </AnimateOnScroll>
-        </div>
-      </section>
-      
       <div className="bg-card">
+        <section className="container mx-auto py-16 md:py-24 px-4">
+            <AnimateOnScroll>
+                <Card className="bg-background p-8 md:p-12 shadow-2xl">
+                    <SectionTitle className="text-center">Who We Are</SectionTitle>
+                    <div className="grid md:grid-cols-2 gap-8 text-muted-foreground text-base leading-relaxed">
+                        <p>
+                        Demystify Capital Markets is a premier provider of research and
+                        analytics (R&A) services for financial institutions across the globe. We
+                        provide a broad range of services, including equity research, credit
+                        research, investment banking support, and financial modeling.
+                        </p>
+                        <p>
+                        Our team of experienced professionals has a deep understanding of the
+                        capital markets and is committed to providing our clients with the
+                        highest quality of service. We are headquartered in New Delhi, India,
+                        and have a team of over 50 professionals.
+                        </p>
+                    </div>
+                </Card>
+            </AnimateOnScroll>
+        </section>
+
         <section className="container mx-auto pb-16 md:pb-24 px-4">
           <AnimateOnScroll>
             <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
