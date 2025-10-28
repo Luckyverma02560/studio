@@ -15,8 +15,12 @@ export default {
         'headline-display': ['"Cinzel"', 'serif'],
         display: ['"Italiana"', 'serif'],
         code: ['monospace'],
+        inter: ['"Inter"', 'sans-serif'],
       },
       colors: {
+        'gold-accent': '#C7A45B',
+        'subtle-text': '#B6B6B8',
+        'heading-text': '#E8E8E8',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -105,7 +109,7 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+        'fade-in-up': 'fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
       },
     },
   },

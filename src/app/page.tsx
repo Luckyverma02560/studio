@@ -4,6 +4,10 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
 import { Linkedin } from 'lucide-react';
 import { AnimateOnScroll } from '@/components/animate-on-scroll';
+import { cn } from '@/lib/utils';
+import { WhoWeAreParticles } from '@/components/who-we-are-particles';
+import { WhoWeAreCard } from '@/components/who-we-are-card';
+
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'about-us-hero');
 const storyImage = PlaceHolderImages.find(p => p.id === 'our-story');
@@ -39,7 +43,7 @@ export default function Home() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10">
           <AnimateOnScroll>
             <h1 className="text-[90px] font-display font-normal text-bright-accent">About Us</h1>
@@ -47,30 +51,18 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="bg-card">
-        <section className="container mx-auto py-16 md:py-24 px-4">
-            <AnimateOnScroll>
-                <Card className="bg-[#B4B4B4] p-8 md:p-12 shadow-2xl shadow-black border-none">
-                    <SectionTitle className="text-center">Who We Are</SectionTitle>
-                    <div className="grid md:grid-cols-2 gap-8 text-muted-foreground text-base leading-relaxed">
-                        <p>
-                        Demystify Capital Markets is a premier provider of research and
-                        analytics (R&A) services for financial institutions across the globe. We
-                        provide a broad range of services, including equity research, credit
-                        research, investment banking support, and financial modeling.
-                        </p>
-                        <p>
-                        Our team of experienced professionals has a deep understanding of the
-                        capital markets and is committed to providing our clients with the
-                        highest quality of service. We are headquartered in New Delhi, India,
-                        and have a team of over 50 professionals.
-                        </p>
-                    </div>
-                </Card>
+      {/* New "Who We Are" Section */}
+      <section className="relative bg-gradient-to-b from-[#0E0E10] to-[#1B1C1E] py-24 md:py-32 overflow-hidden">
+        <WhoWeAreParticles />
+        <div className="relative container mx-auto px-4 z-10">
+            <AnimateOnScroll animationClasses="animate-fade-in-up" once={true}>
+                <WhoWeAreCard />
             </AnimateOnScroll>
-        </section>
-
-        <section className="container mx-auto pb-16 md:pb-24 px-4">
+        </div>
+      </section>
+      
+      <div className="bg-card">
+        <section className="container mx-auto pt-16 md:pt-24 px-4">
           <AnimateOnScroll>
             <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
               <div>
@@ -105,7 +97,7 @@ export default function Home() {
           </AnimateOnScroll>
         </section>
 
-        <section className="container mx-auto pb-16 md:pb-24 px-4">
+        <section className="container mx-auto py-16 md:py-24 px-4">
           <AnimateOnScroll>
             <SectionTitle>Our Vision</SectionTitle>
             <div className="grid md:grid-cols-2 gap-8 text-muted-foreground text-base leading-relaxed">
