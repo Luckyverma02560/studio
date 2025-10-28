@@ -42,12 +42,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/80" />
         <div className="relative z-10">
           <AnimateOnScroll>
-            <h1 className="text-4xl md:text-6xl font-bold">About Us</h1>
+            <h1 className="text-4xl md:text-6xl font-headline-display font-medium text-accent">About Us</h1>
           </AnimateOnScroll>
         </div>
       </section>
 
-      <section className="relative -mt-20 md:-mt-24 z-10">
+      <section className="relative -mt-20 md:-mt-32 z-10">
         <div className="container mx-auto py-16 md:py-24 px-4">
           <AnimateOnScroll>
             <Card className="bg-background/80 backdrop-blur-sm p-8 md:p-12 shadow-2xl">

@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         body: ['"PT Sans"', 'sans-serif'],
         headline: ['"Playfair Display"', 'serif'],
+        'headline-display': ['"Cinzel"', 'serif'],
         code: ['monospace'],
       },
       colors: {
