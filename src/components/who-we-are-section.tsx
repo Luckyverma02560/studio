@@ -13,7 +13,7 @@ export const WhoWeAreSection = () => {
         const rect = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        const rotateX = (y / rect.height - 0.5) * -12;
+        const rotateX = (y / rect.height - 0.5) * -20;
         const rotateY = (x / rect.width - 0.5) * 12;
         setTransform(`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
     };
