@@ -47,7 +47,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative -mt-32 z-10">
+      <section className="relative -mt-24 md:-mt-32 z-10">
         <div className="container mx-auto py-16 md:py-24 px-4">
           <AnimateOnScroll>
             <Card className="bg-background/80 backdrop-blur-sm p-8 md:p-12 shadow-2xl">
