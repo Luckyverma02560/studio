@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -28,7 +29,7 @@ const teamMembers = [
 export default function Home() {
   return (
     <>
-      <section className="relative h-[60vh] md:h-[70vh] w-full flex items-center justify-center text-center text-white">
+      <section className="relative h-[70vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
@@ -39,10 +40,12 @@ export default function Home() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10">
-          <AnimateOnScroll>
-            <h1 className="text-[90px] font-display font-normal text-bright-accent">About Us</h1>
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 p-4">
+          <AnimateOnScroll animationClasses="animate-fade-in-up">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline-display font-bold text-bright-accent tracking-wider leading-tight heading-sweep">
+              About Us
+            </h1>
           </AnimateOnScroll>
         </div>
       </section>

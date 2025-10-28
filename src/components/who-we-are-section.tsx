@@ -13,7 +13,7 @@ export const WhoWeAreSection = () => {
         const rect = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        const rotateX = (y / rect.height - 0.5) * -20; // Increased vertical range
+        const rotateX = (y / rect.height - 0.5) * -40; // Increased vertical range
         const rotateY = (x / rect.width - 0.5) * 12;
         setRotation({ rotateX, rotateY });
     };
