@@ -1,10 +1,28 @@
+
 "use client";
+
+import { CSSProperties } from 'react';
 
 interface WhoWeAreCardProps {
     transform: string;
+    rotation: { rotateX: number; rotateY: number };
 }
 
-export const WhoWeAreCard = ({ transform }: WhoWeAreCardProps) => {
+export const WhoWeAreCard = ({ transform, rotation }: WhoWeAreCardProps) => {
+    
+    const shadowX = -rotation.rotateY * 0.5;
+    const shadowY = rotation.rotateX * 0.5;
+
+    const textShadowStyle: CSSProperties = {
+        textShadow: `
+            ${shadowX}px ${shadowY}px 15px rgba(0, 191, 255, 0.4),
+            0 0 5px rgba(0, 191, 255, 0.5),
+            0 0 10px rgba(0, 191, 255, 0.4),
+            0 0 20px rgba(0, 191, 255, 0.3),
+            0 0 30px rgba(0, 191, 255, 0.2)
+        `
+    };
+
     return (
         <div
             className="bg-[rgba(30,30,32,0.65)] backdrop-blur-xl rounded-2xl border border-[rgba(199,164,91,0.3)] shadow-2xl shadow-black/30 text-center p-8 md:p-16 transition-transform duration-300 ease-out"
@@ -12,7 +30,10 @@ export const WhoWeAreCard = ({ transform }: WhoWeAreCardProps) => {
         >
             <div className="relative">
                 <div className="light-streak"></div>
-                <h2 className="font-headline text-5xl md:text-6xl font-bold text-heading-text tracking-[2px] animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                <h2 
+                    className="font-headline text-5xl md:text-6xl font-bold text-heading-text tracking-[2px] animate-fade-in-up transition-all duration-300 ease-out" 
+                    style={{ ...textShadowStyle, animationDelay: '0.2s' }}
+                >
                     WHO WE ARE
                 </h2>
                 <div className="w-32 h-0.5 mx-auto my-6 gold-divider" />
