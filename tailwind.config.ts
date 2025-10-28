@@ -16,6 +16,7 @@ export default {
         display: ['"Italiana"', 'serif'],
         code: ['monospace'],
         inter: ['"Inter"', 'sans-serif'],
+        handwriting: ['"Tangerine"', 'cursive'],
       },
       colors: {
         'gold-accent': 'hsl(var(--accent))',
