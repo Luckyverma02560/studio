@@ -13,7 +13,7 @@ import { cn } from '@/lib/utils';
 import { WhoWeAreParticles } from '@/components/who-we-are-particles';
 
 const teamMembers = [
-  { id: 'team1', name: 'Vandana M.', role: 'Founder & CEO' },
+  { id: 'team1', name: 'Harshit Verma', role: 'Founder & CEO' },
   { id: 'team2', name: 'Amit A.', role: 'Co-Founder & COO' },
   { id: 'team3', name: 'Ankit M.', role: 'Head of Operations' },
   { id: 'team4', name: 'Riddhima B.', role: 'Talent Acquisition Lead' },
