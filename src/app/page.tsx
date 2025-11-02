@@ -72,6 +72,9 @@ export default function Home() {
         <AnimateOnScroll>
           <OurStorySection />
         </AnimateOnScroll>
+        <div className="relative py-12">
+            <div className="neon-divider"></div>
+        </div>
         <AnimateOnScroll>
           <OurVisionSection />
         </AnimateOnScroll>
