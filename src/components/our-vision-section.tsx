@@ -7,15 +7,35 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { StarfieldAnimation } from './starfield-animation';
 
+const AuroraLayer = ({ style, delay }: { style: React.CSSProperties, delay: string }) => (
+    <div
+        className="aurora-layer"
+        style={{
+            ...style,
+            animationDelay: delay,
+            animationDuration: '30s'
+        }}
+    />
+);
+
 export const OurVisionSection = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
     const visionImage = PlaceHolderImages.find(p => p.id === 'our-mission'); // Re-using mission image for now
+
+    const auroraLayers = [
+        { style: { width: '120vw', height: '120vh', top: '50%', left: '50%', background: 'radial-gradient(circle, rgba(0, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0) 60%)' }, delay: '0s' },
+        { style: { width: '150vw', height: '150vh', top: '40%', left: '60%', background: 'radial-gradient(circle, rgba(255, 0, 255, 0.3) 0%, rgba(0, 0, 0, 0) 60%)' }, delay: '-5s' },
+        { style: { width: '100vw', height: '100vh', top: '60%', left: '40%', background: 'radial-gradient(circle, rgba(199, 164, 91, 0.4) 0%, rgba(0, 0, 0, 0) 60%)' }, delay: '-10s' },
+    ];
 
     return (
         <section
             ref={sectionRef}
             className="relative min-h-screen w-full flex items-center py-20 md:py-32 px-4 overflow-hidden"
         >
+             <div className="aurora-background">
+                {auroraLayers.map((layer, i) => <AuroraLayer key={i} {...layer} />)}
+             </div>
              <StarfieldAnimation />
              <div className="absolute inset-0 bg-black -z-10 opacity-50" />
             <div className="container mx-auto">

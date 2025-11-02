@@ -3,17 +3,22 @@
 
 import { useState, useEffect, useRef } from 'react';
 
-const NUM_STARS = 150;
-const NUM_GALAXIES = 20;
-const SCROLL_SPEED_FACTOR = 0.5;
+const NUM_STARS = 50;
+const NUM_GALAXIES = 8;
+const NUM_PLANETS = 5;
+const SCROLL_SPEED_FACTOR = 1.0; // Increased from 0.5
 const MAX_Z = 1000;
 
 interface Star {
     x: number;
     y: number;
     z: number;
-    isGalaxy?: boolean;
+    type: 'star' | 'galaxy' | 'planet';
+    color: string;
 }
+
+const STAR_COLORS = ['#FFFFFF', '#FFFFE0', '#ADD8E6', '#FFDAB9'];
+const PLANET_COLORS = ['#A52A2A', '#4682B4', '#D2691E', '#5F9EA0'];
 
 export const StarfieldAnimation = () => {
     const [stars, setStars] = useState<Star[]>([]);
@@ -28,6 +33,8 @@ export const StarfieldAnimation = () => {
                     x: Math.random() * 2 - 1,
                     y: Math.random() * 2 - 1,
                     z: Math.random() * MAX_Z,
+                    type: 'star',
+                    color: STAR_COLORS[Math.floor(Math.random() * STAR_COLORS.length)],
                 });
             }
             for (let i = 0; i < NUM_GALAXIES; i++) {
@@ -35,7 +42,17 @@ export const StarfieldAnimation = () => {
                     x: Math.random() * 2 - 1,
                     y: Math.random() * 2 - 1,
                     z: Math.random() * MAX_Z,
-                    isGalaxy: true,
+                    type: 'galaxy',
+                    color: '#000', // Galaxy color is handled by CSS
+                });
+            }
+            for (let i = 0; i < NUM_PLANETS; i++) {
+                newStars.push({
+                    x: Math.random() * 2 - 1,
+                    y: Math.random() * 2 - 1,
+                    z: Math.random() * MAX_Z,
+                    type: 'planet',
+                    color: PLANET_COLORS[Math.floor(Math.random() * PLANET_COLORS.length)],
                 });
             }
             setStars(newStars);
@@ -51,7 +68,7 @@ export const StarfieldAnimation = () => {
 
             setStars(prevStars =>
                 prevStars.map(star => {
-                    const speedMultiplier = star.isGalaxy ? 0.7 : 1;
+                    const speedMultiplier = star.type === 'galaxy' ? 0.7 : (star.type === 'planet' ? 0.9 : 1);
                     let newZ = star.z - delta * SCROLL_SPEED_FACTOR * speedMultiplier;
 
                     if (newZ <= 0) {
@@ -75,7 +92,7 @@ export const StarfieldAnimation = () => {
         };
     }, []);
 
-    const getStarStyle = (star: Star) => {
+    const getParticleStyle = (star: Star) => {
         if (!containerRef.current) return {};
         
         const perspective = containerRef.current.offsetWidth / 2;
@@ -84,26 +101,52 @@ export const StarfieldAnimation = () => {
         const y = star.y * containerRef.current.offsetHeight * 0.5 * scale + containerRef.current.offsetHeight / 2;
         
         let size, opacity;
-        if (star.isGalaxy) {
-            size = Math.max(0.1, 8 * scale);
-            opacity = Math.max(0, Math.min(1, scale * 1.2));
-        } else {
-            size = Math.max(0.1, 2.5 * scale);
-            opacity = Math.max(0, Math.min(1, scale * 1.5));
+        switch (star.type) {
+            case 'galaxy':
+                size = Math.max(0.1, 10 * scale);
+                opacity = Math.max(0, Math.min(1, scale * 1.2));
+                break;
+            case 'planet':
+                size = Math.max(0.1, 5 * scale);
+                opacity = Math.max(0, Math.min(1, scale * 1.3));
+                break;
+            case 'star':
+            default:
+                size = Math.max(0.1, 2.5 * scale);
+                opacity = Math.max(0, Math.min(1, scale * 1.5));
+                break;
         }
 
-        return {
+        const style: React.CSSProperties = {
             transform: `translate(${x}px, ${y}px)`,
             width: `${size}px`,
             height: `${size}px`,
             opacity: opacity,
         };
+
+        if (star.type !== 'galaxy') {
+            style.backgroundColor = star.color;
+        }
+        if (star.type === 'planet') {
+            style.boxShadow = `0 0 8px ${star.color}55`;
+        }
+
+        return style;
     };
+
+    const getParticleClassName = (star: Star) => {
+        switch (star.type) {
+            case 'galaxy': return 'galaxy';
+            case 'planet': return 'planet';
+            case 'star': return 'star';
+            default: return 'star';
+        }
+    }
 
     return (
         <div ref={containerRef} className="starfield-canvas">
             {stars.map((star, index) => (
-                <div key={index} className={star.isGalaxy ? "galaxy" : "star"} style={getStarStyle(star)} />
+                <div key={index} className={getParticleClassName(star)} style={getParticleStyle(star)} />
             ))}
         </div>
     );
