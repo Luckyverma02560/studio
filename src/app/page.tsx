@@ -72,7 +72,7 @@ export default function Home() {
         <AnimateOnScroll>
           <OurStorySection />
         </AnimateOnScroll>
-        <div className="relative py-12">
+        <div className="relative py-12 w-1/2 mx-auto overflow-hidden">
             <div className="neon-divider"></div>
         </div>
         <AnimateOnScroll>
