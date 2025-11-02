@@ -69,10 +69,18 @@ export default function Home() {
 
       <div className="bg-[#1A1C20]">
         <WhoWeAreSection />
-        <OurStorySection />
-        <OurVisionSection />
-        <OurMissionSection />
-        <OurTeamSection teamMembers={teamMembers} placeholderImages={PlaceHolderImages} />
+        <AnimateOnScroll>
+          <OurStorySection />
+        </AnimateOnScroll>
+        <AnimateOnScroll>
+          <OurVisionSection />
+        </AnimateOnScroll>
+        <AnimateOnScroll>
+          <OurMissionSection />
+        </AnimateOnScroll>
+        <AnimateOnScroll>
+          <OurTeamSection teamMembers={teamMembers} placeholderImages={PlaceHolderImages} />
+        </AnimateOnScroll>
       </div>
     </>
   );

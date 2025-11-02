@@ -13,8 +13,9 @@ export const WhoWeAreSection = () => {
         const rect = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        const rotateX = (y / rect.height - 0.5) * -40; // Increased vertical range
-        const rotateY = (x / rect.width - 0.5) * 12;
+        // Reduced amplitude by 20% from -40/12 to -32/9.6
+        const rotateX = (y / rect.height - 0.5) * -32; 
+        const rotateY = (x / rect.width - 0.5) * 9.6;
         setRotation({ rotateX, rotateY });
     };
 
@@ -32,9 +33,7 @@ export const WhoWeAreSection = () => {
         >
             <WhoWeAreParticles />
             <div className="relative container mx-auto px-4 z-10">
-                <AnimateOnScroll animationClasses="animate-fade-in-up" once={true}>
-                    <WhoWeAreCard transform={transform} rotation={rotation} />
-                </AnimateOnScroll>
+                <WhoWeAreCard transform={transform} rotation={rotation} />
             </div>
         </section>
     );
