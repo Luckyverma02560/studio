@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 const NUM_STARS = 50;
 const NUM_GALAXIES = 8;
 const NUM_PLANETS = 5;
-const SCROLL_SPEED_FACTOR = 1.0; // Increased from 0.5
+const SCROLL_SPEED_FACTOR = 2.0; // Increased from 1.0 to 2.0 (200%)
 const MAX_Z = 1000;
 
 interface Star {
@@ -17,8 +17,8 @@ interface Star {
     color: string;
 }
 
-const STAR_COLORS = ['#FFFFFF', '#FFFFE0', '#ADD8E6', '#FFDAB9'];
-const PLANET_COLORS = ['#A52A2A', '#4682B4', '#D2691E', '#5F9EA0'];
+const STAR_COLORS = ['#FFFFFF', '#FFFFE0', '#ADD8E6', '#FFDAB9', '#F08080', '#20B2AA'];
+const PLANET_COLORS = ['#A52A2A', '#4682B4', '#D2691E', '#5F9EA0', '#8A2BE2', '#DB7093'];
 
 export const StarfieldAnimation = () => {
     const [stars, setStars] = useState<Star[]>([]);
@@ -71,12 +71,12 @@ export const StarfieldAnimation = () => {
                     const speedMultiplier = star.type === 'galaxy' ? 0.7 : (star.type === 'planet' ? 0.9 : 1);
                     let newZ = star.z - delta * SCROLL_SPEED_FACTOR * speedMultiplier;
 
-                    if (newZ <= 0) {
-                        newZ = MAX_Z;
+                    if (newZ <= 1) { // When particle is at or behind the camera
+                        newZ = MAX_Z; // Reset to the back
                         star.x = Math.random() * 2 - 1;
                         star.y = Math.random() * 2 - 1;
-                    } else if (newZ > MAX_Z) {
-                        newZ = 1;
+                    } else if (newZ > MAX_Z) { // When particle is too far away
+                        newZ = 1; // Reset to the front
                         star.x = Math.random() * 2 - 1;
                         star.y = Math.random() * 2 - 1;
                     }
