@@ -10,7 +10,7 @@ import { OurMissionSection } from '@/components/our-mission-section';
 import { OurTeamSection } from '@/components/our-team-section';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
-import { WhoWeAreParticles } from '@/components/who-we-are-particles';
+import { HeroParticles } from '@/components/hero-particles';
 
 const teamMembers = [
   { id: 'team1', name: 'Harshit Verma', role: 'Founder & CEO' },
@@ -53,7 +53,7 @@ export default function Home() {
         onMouseLeave={handleMouseLeave}
       >
         <div className="absolute inset-0 animate-particles-in">
-            <WhoWeAreParticles />
+            <HeroParticles />
         </div>
         
         <div className="relative z-10 p-4" style={transformStyle}>
