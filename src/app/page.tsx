@@ -67,13 +67,13 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="bg-[#1A1C20]">
+      <div className="bg-[#1A1C20] relative overflow-hidden">
         <WhoWeAreSection />
         <AnimateOnScroll>
           <OurStorySection />
         </AnimateOnScroll>
-        <div className="relative py-12 w-full mx-auto overflow-hidden">
-            <div className="neon-divider"></div>
+        <div className="absolute top-1/2 left-0 w-full h-px z-20">
+          <div className="neon-divider"></div>
         </div>
         <AnimateOnScroll>
           <OurVisionSection />
