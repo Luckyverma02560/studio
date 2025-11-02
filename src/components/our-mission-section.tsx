@@ -45,8 +45,8 @@ export const OurMissionSection = () => {
         >
             <div className="absolute inset-0 bg-gradient-to-b from-[#101113] to-[#0A0A0B] -z-10" />
             <div className="absolute inset-0 z-0">
-                <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-gold-accent/5 rounded-full filter blur-3xl animate-pulse" />
-                <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-gold-accent/5 rounded-full filter blur-3xl animate-pulse animation-delay-400" />
+                <div className="absolute -top-1/4 -left-1/4 w-2/3 h-2/3 bg-gold-accent/10 rounded-full filter blur-[100px] animate-pulse-slow" />
+                <div className="absolute -bottom-1/4 -right-1/4 w-2/3 h-2/3 bg-gold-accent/10 rounded-full filter blur-[100px] animate-pulse-slow animation-delay-400" />
             </div>
 
             <div className="relative text-center max-w-6xl mx-auto z-10">
@@ -85,3 +85,5 @@ export const OurMissionSection = () => {
         </section>
     );
 };
+
+    
