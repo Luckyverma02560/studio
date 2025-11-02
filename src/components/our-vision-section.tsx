@@ -15,7 +15,7 @@ export const OurVisionSection = () => {
             ref={sectionRef}
             className="relative min-h-screen w-full flex items-center py-20 md:py-32 px-4 overflow-hidden"
         >
-             <div className="absolute inset-0 bg-secondary -z-10" />
+             <div className="absolute inset-0 bg-black -z-10" />
             <div className="container mx-auto">
                 <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
                     <div className="text-left">
