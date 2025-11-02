@@ -5,6 +5,7 @@ import { useRef } from 'react';
 import { AnimateOnScroll } from './animate-on-scroll';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { StarfieldAnimation } from './starfield-animation';
 
 export const OurVisionSection = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -15,10 +16,11 @@ export const OurVisionSection = () => {
             ref={sectionRef}
             className="relative min-h-screen w-full flex items-center py-20 md:py-32 px-4 overflow-hidden"
         >
-             <div className="absolute inset-0 bg-black -z-10" />
+             <StarfieldAnimation />
+             <div className="absolute inset-0 bg-black -z-10 opacity-50" />
             <div className="container mx-auto">
                 <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-                    <div className="text-left">
+                    <div className="text-left z-10">
                         <AnimateOnScroll animationClasses="animate-fade-in-up">
                             <h2 className="section-label mb-4">Our Vision</h2>
                         </AnimateOnScroll>
@@ -46,7 +48,7 @@ export const OurVisionSection = () => {
                         </div>
                     </div>
 
-                    <AnimateOnScroll animationClasses="animate-fade-in-up" className="relative aspect-[4/5] animation-delay-600">
+                    <AnimateOnScroll animationClasses="animate-fade-in-up" className="relative aspect-[4/5] animation-delay-600 z-10">
                         <div className="group perspective-1000">
                              {visionImage && (
                                 <Image
