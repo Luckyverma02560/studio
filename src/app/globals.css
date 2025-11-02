@@ -344,26 +344,27 @@ body {
 
 .neon-divider {
     height: 2px;
-    width: 200%; /* Make it wider than the container */
+    width: 100%;
     background: linear-gradient(90deg, transparent, #23C6D9, #C7A45B, #23C6D9, transparent);
     background-size: 50% 100%;
     box-shadow:
-        0 0 10px #23C6D9,
-        0 0 20px #23C6D9,
-        0 0 40px #C7A45B,
-        0 0 80px #C7A45B;
+        0 0 15px #23C6D9,
+        0 0 30px #23C6D9,
+        0 0 60px #C7A45B,
+        0 0 120px #C7A45B;
     animation: sweep-glow 4s linear infinite;
 }
 
 @keyframes sweep-glow {
     0% {
-        background-position: 100% 0;
+        background-position: 150% 0;
     }
     100% {
-        background-position: -100% 0;
+        background-position: -150% 0;
     }
 }
     
 
     
+
 
