@@ -38,13 +38,13 @@ export const OurStorySection = () => {
             ref={sectionRef}
             className="relative min-h-screen w-full flex items-center justify-center py-20 md:py-32 px-4 overflow-hidden"
         >
-            <div className="absolute inset-0 bg-black/30 z-0">
+            <div className="absolute inset-0 bg-black/20 z-0">
                 {storyImage && (
                     <Image
                         src={storyImage.imageUrl}
                         alt="Financial workspace"
                         fill
-                        className="object-cover opacity-10 filter blur-sm scale-110 transition-transform duration-1000 ease-out [.is-in-view_&]:scale-100"
+                        className="object-cover opacity-20 filter blur-[2px] scale-110 transition-transform duration-1000 ease-out [.is-in-view_&]:scale-100"
                     />
                 )}
                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
