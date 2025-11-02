@@ -72,9 +72,6 @@ export default function Home() {
         <AnimateOnScroll>
           <OurStorySection />
         </AnimateOnScroll>
-        <div className="absolute top-1/2 left-0 w-full h-px z-20">
-          <div className="neon-divider"></div>
-        </div>
         <AnimateOnScroll>
           <OurVisionSection />
         </AnimateOnScroll>
