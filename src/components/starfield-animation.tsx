@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 const NUM_STARS = 500;
-const SCROLL_FACTOR = 0.002;
+const SCROLL_SPEED_FACTOR = 5; 
 const MAX_Z = 1000;
 
 interface Star {
@@ -16,6 +16,7 @@ export const StarfieldAnimation = () => {
     const [stars, setStars] = useState<Star[]>([]);
     const containerRef = useRef<HTMLDivElement>(null);
     const scrollYRef = useRef(0);
+    const animationFrameIdRef = useRef<number>();
 
     useEffect(() => {
         const initStars = () => {
@@ -33,50 +34,52 @@ export const StarfieldAnimation = () => {
     }, []);
 
     useEffect(() => {
-        let animationFrameId: number;
-        
-        const handleScroll = () => {
-            scrollYRef.current = window.scrollY;
-        };
-
         const animate = () => {
-            if (containerRef.current) {
-                const sectionTop = containerRef.current.parentElement?.offsetTop ?? 0;
-                const sectionHeight = containerRef.current.parentElement?.offsetHeight ?? window.innerHeight;
-                const viewBottom = window.scrollY + window.innerHeight;
-
-                if (window.scrollY > sectionTop - window.innerHeight && window.scrollY < sectionTop + sectionHeight) {
-                    setStars(prevStars =>
-                        prevStars.map(star => {
-                            let newZ = star.z - (window.scrollY - scrollYRef.current) * SCROLL_FACTOR * 10;
-                            
-                            if (newZ <= 0) {
-                                newZ = MAX_Z;
-                                star.x = Math.random() * 2 - 1;
-                                star.y = Math.random() * 2 - 1;
-                            } else if (newZ > MAX_Z) {
-                                newZ = 1;
-                                star.x = Math.random() * 2 - 1;
-                                star.y = Math.random() * 2 - 1;
-                            }
-
-                            return { ...star, z: newZ };
-                        })
-                    );
-                }
-            }
-            scrollYRef.current = window.scrollY;
-            animationFrameId = requestAnimationFrame(animate);
+            setStars(prevStars =>
+                prevStars.map(star => {
+                    let newZ = star.z - SCROLL_SPEED_FACTOR;
+                    
+                    if (newZ <= 0) {
+                        newZ = MAX_Z;
+                        star.x = Math.random() * 2 - 1;
+                        star.y = Math.random() * 2 - 1;
+                    }
+                    return { ...star, z: newZ };
+                })
+            );
+            animationFrameIdRef.current = requestAnimationFrame(animate);
         };
 
-        window.addEventListener('scroll', handleScroll);
-        animationFrameId = requestAnimationFrame(animate);
+        const handleScroll = () => {
+            const delta = window.scrollY - scrollYRef.current;
+            scrollYRef.current = window.scrollY;
+
+            setStars(prevStars =>
+                prevStars.map(star => {
+                    let newZ = star.z - delta * 0.2;
+                    if (newZ <= 0) {
+                        newZ = MAX_Z;
+                        star.x = Math.random() * 2 - 1;
+                        star.y = Math.random() * 2 - 1;
+                    } else if (newZ > MAX_Z) {
+                        newZ = 1;
+                        star.x = Math.random() * 2 - 1;
+                        star.y = Math.random() * 2 - 1;
+                    }
+                    return { ...star, z: newZ };
+                })
+            );
+        };
+        
+        window.addEventListener('scroll', handleScroll, { passive: true });
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            cancelAnimationFrame(animationFrameId);
+            if(animationFrameIdRef.current) {
+                cancelAnimationFrame(animationFrameIdRef.current);
+            }
         };
-    }, [stars]);
+    }, []);
 
     const getStarStyle = (star: Star) => {
         if (!containerRef.current) return {};
