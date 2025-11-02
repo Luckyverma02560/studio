@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 const NUM_STARS = 50;
 const NUM_GALAXIES = 8;
 const NUM_PLANETS = 5;
-const SCROLL_SPEED_FACTOR = 2.0; // Increased from 1.0 to 2.0 (200%)
+const SCROLL_SPEED_FACTOR = 2.0;
 const MAX_Z = 1000;
 
 interface Star {
@@ -17,8 +17,8 @@ interface Star {
     color: string;
 }
 
-const STAR_COLORS = ['#FFFFFF', '#FFFFE0', '#ADD8E6', '#FFDAB9', '#F08080', '#20B2AA'];
-const PLANET_COLORS = ['#A52A2A', '#4682B4', '#D2691E', '#5F9EA0', '#8A2BE2', '#DB7093'];
+const STAR_COLORS = ['#FFFFFF', '#FFFFE0', '#ADD8E6', '#FFDAB9', '#F08080', '#20B2AA', '#98FB98', '#FF69B4', '#DAA520'];
+const PLANET_COLORS = ['#A52A2A', '#4682B4', '#D2691E', '#5F9EA0', '#8A2BE2', '#DB7093', '#00CED1', '#FF4500'];
 
 export const StarfieldAnimation = () => {
     const [stars, setStars] = useState<Star[]>([]);
