@@ -342,8 +342,14 @@ body {
   }
 }
     
-
+.neon-divider {
+  height: 1px;
+  width: 100%;
+  background-color: hsl(var(--accent));
+  box-shadow: 0 0 5px hsl(var(--accent)), 0 0 10px hsl(var(--accent));
+}
     
+
 
 
 
