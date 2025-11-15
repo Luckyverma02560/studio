@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRef, useEffect } from 'react';
@@ -44,6 +45,7 @@ export const OurStorySection = () => {
                         src={storyImage.imageUrl}
                         alt="Financial workspace"
                         fill
+                        priority
                         className="object-cover opacity-20 filter blur-[2px] scale-110 transition-transform duration-1000 ease-out [.is-in-view_&]:scale-100"
                     />
                 )}

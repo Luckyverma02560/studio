@@ -43,6 +43,7 @@ export default function Home() {
 
   const transformStyle = {
     transform: `perspective(1000px) rotateX(${rotation.rotateX}deg) rotateY(${rotation.rotateY}deg)`,
+    willChange: 'transform'
   };
 
   return (

@@ -18,7 +18,8 @@ export const WhoWeAreCard = ({ transform, rotation }: WhoWeAreCardProps) => {
         boxShadow: `
             ${shadowX}px ${shadowY}px 30px rgba(0, 191, 255, 0.3),
             inset 0 0 15px rgba(0, 191, 255, 0.1)
-        `
+        `,
+        willChange: 'transform, box-shadow'
     };
 
     return (
