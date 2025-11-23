@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -17,6 +18,7 @@ export default {
         code: ['monospace'],
         inter: ['"Inter"', 'sans-serif'],
         handwriting: ['"Tangerine"', 'cursive'],
+        helvetica: ['"Helvetica"', 'sans-serif'],
       },
       colors: {
         'gold-accent': 'hsl(var(--accent))',
