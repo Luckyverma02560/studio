@@ -12,7 +12,7 @@ export const DisclaimerSection = () => {
                 </AnimateOnScroll>
                 <div className="max-w-4xl mx-auto text-muted-foreground text-sm space-y-6 text-center">
                     <AnimateOnScroll animationClasses="animate-fade-in-up" className="animation-delay-200">
-                        <p className="whitespace-pre-line">
+                        <p className="whitespace-pre-line font-noto-serif">
 {`18+ Age Warning:
 You must be at least 18 years old to participate in this Stock Market Trading Workshop.
 

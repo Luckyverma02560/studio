@@ -19,6 +19,7 @@ export default {
         inter: ['"Inter"', 'sans-serif'],
         handwriting: ['"Tangerine"', 'cursive'],
         helvetica: ['"Helvetica"', 'sans-serif'],
+        'noto-serif': ['"Noto Serif"', 'serif'],
       },
       colors: {
         'gold-accent': 'hsl(var(--accent))',
