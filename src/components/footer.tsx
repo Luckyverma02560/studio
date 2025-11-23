@@ -34,7 +34,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-black text-primary-foreground/80 overflow-hidden">
+    <footer className="relative bg-[#1A1C20] text-primary-foreground/80 overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <FooterParticles />
       </div>
