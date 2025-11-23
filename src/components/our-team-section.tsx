@@ -4,7 +4,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { Linkedin } from 'lucide-react';
+import { Linkedin, Facebook, Twitter } from 'lucide-react';
 import { AnimateOnScroll } from '@/components/animate-on-scroll';
 import { cn } from '@/lib/utils';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
@@ -61,9 +61,15 @@ export const OurTeamSection = ({ teamMembers, placeholderImages }: OurTeamSectio
                         )}
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                       <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div className="absolute bottom-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <Link href="#" className="bg-gold-accent text-accent-foreground p-2 rounded-full inline-block hover:bg-white hover:text-black">
                             <Linkedin size={20} />
+                          </Link>
+                          <Link href="#" className="bg-gold-accent text-accent-foreground p-2 rounded-full inline-block hover:bg-white hover:text-black">
+                            <Facebook size={20} />
+                          </Link>
+                          <Link href="#" className="bg-gold-accent text-accent-foreground p-2 rounded-full inline-block hover:bg-white hover:text-black">
+                            <Twitter size={20} />
                           </Link>
                         </div>
                     </div>
