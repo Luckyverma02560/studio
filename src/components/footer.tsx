@@ -92,7 +92,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start">
                 <MapPin size={20} className="text-accent mt-1 mr-4 shrink-0" />
-                <span>B-9, I-st Floor, Shivalik, Malviya Nagar, New Delhi - 110017</span>
+                <span>Room No. 001, 1-st Floor, XXXX Residence, Sector 44, Noida - 201020</span>
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="text-accent mr-4 shrink-0" />
