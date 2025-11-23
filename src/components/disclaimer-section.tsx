@@ -52,7 +52,7 @@ You agree to use the information provided in this workshop responsibly and ethic
                             </p>
                             <p>
                                 <span className="font-headline font-bold text-gold-accent">Email : </span>
-                                <span className="text-white">kavirajverma1976@gmail.com</span>
+                                <span className="font-noto-serif text-muted-foreground">kavirajverma1976@gmail.com</span>
                             </p>
                         </div>
                     </AnimateOnScroll>
