@@ -41,11 +41,20 @@ You agree to use the information provided in this workshop responsibly and ethic
                         </p>
                     </AnimateOnScroll>
                     <AnimateOnScroll animationClasses="animate-fade-in-up" className="animation-delay-400">
-                        <p className="whitespace-pre-line text-red-500 text-lg font-helvetica">
-{`All The Rights Of This Prototypes Are Reserved  And the information and images shown here is a prototype and Non Copyrighted. Remember, this Website Is For Sale.                                                                                         For More Details,                                             
-Contact : +91 8600070638                                        
-Email : kavirajverma1976@gmail.com`}
-                        </p>
+                        <div className="whitespace-pre-line text-red-500 text-lg font-helvetica">
+                            <p>
+                                All The Rights Of This Prototypes Are Reserved  And the information and images shown here is a prototype and Non Copyrighted. Remember, this Website Is For Sale.
+                            </p>
+                            <p>For More Details,</p>
+                            <p>
+                                <span className="text-yellow-400">Contact : </span>
+                                <span className="text-white">+91 8600070638</span>
+                            </p>
+                            <p>
+                                <span className="text-yellow-400">Email : </span>
+                                <span className="text-white">kavirajverma1976@gmail.com</span>
+                            </p>
+                        </div>
                     </AnimateOnScroll>
                 </div>
             </div>
