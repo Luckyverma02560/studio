@@ -159,7 +159,7 @@ export default function Header() {
                   <Menu size={28} />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[80vw] bg-background">
+              <SheetContent side="right" className="w-[80vw] bg-black/60 backdrop-blur-md">
                  <div className="mt-12 flex flex-col gap-4">
                     {[...navLinks, ...moreLinksCol1, ...moreLinksCol2].map(link => <MobileNavLink key={link.href} {...link} />)}
                  </div>
@@ -171,4 +171,3 @@ export default function Header() {
     </header>
   );
 }
-
