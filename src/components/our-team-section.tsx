@@ -22,7 +22,7 @@ interface OurTeamSectionProps {
 
 export const OurTeamSection = ({ teamMembers, placeholderImages }: OurTeamSectionProps) => {
   return (
-    <section className="relative min-h-screen py-20 md:py-32 px-4 bg-gradient-to-b from-[#121315] to-[#1B1C1E]">
+    <section className="relative pt-20 md:pt-32 pb-10 md:pb-16 px-4 bg-gradient-to-b from-[#121315] to-[#1B1C1E]">
        <div className="absolute inset-0 z-0">
            <div className="absolute top-1/4 left-1/4 w-2/3 h-2/3 bg-gold-accent/10 rounded-full filter blur-[100px] animate-pulse-slow" />
            <div className="absolute bottom-1/4 right-1/4 w-2/3 h-2/3 bg-accent/10 rounded-full filter blur-[100px] animate-pulse-slow animation-delay-600" />
