@@ -35,10 +35,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#121315] text-foreground/80 overflow-hidden">
-      <div className="absolute inset-0 opacity-30">
-        <FooterParticles />
-      </div>
+    <footer className="relative bg-[#121315] text-foreground/90">
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Column 1: Logo and About */}

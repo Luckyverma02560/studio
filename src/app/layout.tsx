@@ -25,7 +25,6 @@ export default function RootLayout({
       <body className="font-body antialiased">
           <Header />
           <main>{children}</main>
-          <Footer />
           <Toaster />
           <ScrollToTopButton />
       </body>

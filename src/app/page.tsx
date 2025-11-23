@@ -12,6 +12,8 @@ import { DisclaimerSection } from '@/components/disclaimer-section';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
 import { HeroParticles } from '@/components/hero-particles';
+import Footer from '@/components/footer';
+import { FooterParticles } from '@/components/footer-particles';
 
 const teamMembers = [
   { id: 'team1', name: 'Harshit Verma', role: 'Founder & CEO' },
@@ -83,9 +85,15 @@ export default function Home() {
         <AnimateOnScroll>
           <OurTeamSection teamMembers={teamMembers} placeholderImages={PlaceHolderImages} />
         </AnimateOnScroll>
-        <AnimateOnScroll>
-          <DisclaimerSection />
-        </AnimateOnScroll>
+        <div className="relative overflow-hidden">
+             <div className="absolute inset-0 opacity-30">
+                <FooterParticles />
+            </div>
+            <AnimateOnScroll>
+                <DisclaimerSection />
+            </AnimateOnScroll>
+            <Footer />
+        </div>
       </div>
     </>
   );
