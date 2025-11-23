@@ -86,7 +86,7 @@ export default function Home() {
           <OurTeamSection teamMembers={teamMembers} placeholderImages={PlaceHolderImages} />
         </AnimateOnScroll>
         <div className="relative overflow-hidden">
-             <div className="absolute inset-0 opacity-30">
+             <div className="absolute inset-0">
                 <FooterParticles />
             </div>
             <AnimateOnScroll>

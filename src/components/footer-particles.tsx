@@ -38,5 +38,5 @@ export const FooterParticles = () => {
         return null;
     }
 
-    return <div className="absolute inset-0 top-1/2 h-[150%] particle-container">{particles}</div>;
+    return <div className="absolute inset-0 top-1/2 h-[150%] particle-container opacity-30">{particles}</div>;
 };
