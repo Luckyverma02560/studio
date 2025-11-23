@@ -46,18 +46,20 @@ export const OurTeamSection = ({ teamMembers, placeholderImages }: OurTeamSectio
                 className={`animation-delay-${(index % 3) * 200}`}
                 animationClasses="animate-fade-in-up"
               >
-                <Card className="group overflow-hidden text-center bg-secondary/20 backdrop-blur-sm border border-border/10 shadow-lg shadow-black/30 transition-all duration-300 hover:!shadow-gold-accent/20 hover:-translate-y-2 hover:border-gold-accent/30">
+                <Card className="group overflow-hidden text-center bg-secondary/20 backdrop-blur-sm border border-border/10 shadow-lg shadow-black/30 transition-all duration-300 hover:shadow-gold-accent/20 hover:-translate-y-2 hover:border-gold-accent/30">
                   <CardContent className="p-0">
-                    <div className="relative aspect-square w-full h-full">
-                      {image && (
-                        <Image
-                          src={image.imageUrl}
-                          alt={member.name}
-                          data-ai-hint={image.imageHint}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                      )}
+                    <div className="relative aspect-square">
+                      <div className="relative w-full h-full">
+                        {image && (
+                          <Image
+                            src={image.imageUrl}
+                            alt={member.name}
+                            data-ai-hint={image.imageHint}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        )}
+                      </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <Link href="#" className="bg-gold-accent text-accent-foreground p-2 rounded-full inline-block hover:bg-white hover:text-black">
@@ -79,5 +81,3 @@ export const OurTeamSection = ({ teamMembers, placeholderImages }: OurTeamSectio
     </section>
   );
 };
-
-    
