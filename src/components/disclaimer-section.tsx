@@ -45,7 +45,7 @@ You agree to use the information provided in this workshop responsibly and ethic
                             <p>
                                 All The Rights Of This Prototypes Are Reserved  And the information and images shown here is a prototype and Non Copyrighted. Remember, this Website Is For Sale.
                             </p>
-                            <p>For More Details,</p>
+                            <p><span className="text-yellow-400">For More Details,</span></p>
                             <p>
                                 <span className="text-yellow-400">Contact : </span>
                                 <span className="text-white">+91 8600070638</span>
