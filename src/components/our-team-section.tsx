@@ -48,14 +48,14 @@ export const OurTeamSection = ({ teamMembers, placeholderImages }: OurTeamSectio
               >
                 <Card className="group overflow-hidden text-center bg-secondary/20 backdrop-blur-sm border border-border/10 shadow-lg shadow-black/30 transition-all duration-300 hover:!shadow-gold-accent/20 hover:-translate-y-2 hover:border-gold-accent/30">
                   <CardContent className="p-0">
-                    <div className="relative aspect-square">
+                    <div className="relative aspect-square w-full h-full">
                       {image && (
                         <Image
                           src={image.imageUrl}
                           alt={member.name}
                           data-ai-hint={image.imageHint}
                           fill
-                          className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
