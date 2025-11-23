@@ -8,6 +8,7 @@ import { OurStorySection } from '@/components/our-story-section';
 import { OurVisionSection } from '@/components/our-vision-section';
 import { OurMissionSection } from '@/components/our-mission-section';
 import { OurTeamSection } from '@/components/our-team-section';
+import { DisclaimerSection } from '@/components/disclaimer-section';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
 import { HeroParticles } from '@/components/hero-particles';
@@ -73,7 +74,6 @@ export default function Home() {
         <AnimateOnScroll>
           <OurStorySection />
         </AnimateOnScroll>
-        <div className="neon-divider" />
         <AnimateOnScroll>
           <OurVisionSection />
         </AnimateOnScroll>
@@ -82,6 +82,9 @@ export default function Home() {
         </AnimateOnScroll>
         <AnimateOnScroll>
           <OurTeamSection teamMembers={teamMembers} placeholderImages={PlaceHolderImages} />
+        </AnimateOnScroll>
+        <AnimateOnScroll>
+          <DisclaimerSection />
         </AnimateOnScroll>
       </div>
     </>
