@@ -34,7 +34,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#121315] text-primary-foreground/80 overflow-hidden">
+    <footer className="relative bg-[#121315] text-foreground/80 overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <FooterParticles />
       </div>
@@ -59,7 +59,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
-                <Link key={index} href={social.href} className="text-primary-foreground/60 hover:text-accent transition-colors">
+                <Link key={index} href={social.href} className="text-foreground/60 hover:text-accent transition-colors">
                   <social.icon size={20} />
                 </Link>
               ))}
@@ -111,7 +111,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="bg-black/20 py-4 relative z-10">
-        <div className="container mx-auto px-4 text-center text-xs text-primary-foreground/50">
+        <div className="container mx-auto px-4 text-center text-xs text-foreground/50">
           <p>Copyright © 2024 Demystify Capital Markets. All rights reserved.</p>
         </div>
       </div>
