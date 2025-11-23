@@ -5,7 +5,7 @@ import { AnimateOnScroll } from './animate-on-scroll';
 
 export const DisclaimerSection = () => {
     return (
-        <section className="relative pt-10 md:pt-16 pb-20 md:pb-32 px-4 bg-gradient-to-b from-[#1B1C1E] to-[#121315]">
+        <section className="relative pt-10 md:pt-16 pb-20 md:pb-32 px-4 bg-transparent">
             <div className="container mx-auto relative z-10 text-center">
                 <AnimateOnScroll animationClasses="animate-fade-in-up">
                     <h2 className="section-label mb-8">Disclaimer</h2>

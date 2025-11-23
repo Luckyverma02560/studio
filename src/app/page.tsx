@@ -71,7 +71,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="bg-[#1A1C20] relative overflow-hidden">
+      <div className="bg-[#1A1C20] relative">
         <WhoWeAreSection />
         <AnimateOnScroll>
           <OurStorySection />
@@ -85,14 +85,16 @@ export default function Home() {
         <AnimateOnScroll>
           <OurTeamSection teamMembers={teamMembers} placeholderImages={PlaceHolderImages} />
         </AnimateOnScroll>
-        <div className="relative overflow-hidden">
-             <div className="absolute inset-0">
+        <div className="relative bg-[#121315] overflow-hidden">
+             <div className="absolute inset-0 z-0">
                 <FooterParticles />
             </div>
-            <AnimateOnScroll>
-                <DisclaimerSection />
-            </AnimateOnScroll>
-            <Footer />
+            <div className="relative z-10">
+                <AnimateOnScroll>
+                    <DisclaimerSection />
+                </AnimateOnScroll>
+                <Footer />
+            </div>
         </div>
       </div>
     </>
