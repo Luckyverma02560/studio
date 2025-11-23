@@ -48,7 +48,7 @@ You agree to use the information provided in this workshop responsibly and ethic
                             <p><span className="font-headline font-bold text-gold-accent">For More Details,</span></p>
                             <p>
                                 <span className="font-headline font-bold text-gold-accent">Contact : </span>
-                                <span className="text-white">+91 8600070638</span>
+                                <span className="font-noto-serif text-muted-foreground">+91 8600070638</span>
                             </p>
                             <p>
                                 <span className="font-headline font-bold text-gold-accent">Email : </span>
