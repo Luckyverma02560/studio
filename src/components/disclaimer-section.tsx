@@ -42,16 +42,16 @@ You agree to use the information provided in this workshop responsibly and ethic
                     </AnimateOnScroll>
                     <AnimateOnScroll animationClasses="animate-fade-in-up" className="animation-delay-400">
                         <div className="whitespace-pre-line text-lg">
-                            <p className="font-noto-serif font-extrabold text-red-500">
+                            <p className="font-noto-serif font-extrabold text-[#ca2a30]">
                                 All The Rights Of This Prototypes Are Reserved  And the information and images shown here is a prototype and Non Copyrighted. Remember, this Website Is For Sale.
                             </p>
-                            <p><span className="text-gold-accent font-headline font-bold">For More Details,</span></p>
+                            <p><span className="font-headline font-bold text-gold-accent">For More Details,</span></p>
                             <p>
-                                <span className="text-gold-accent font-headline font-bold">Contact : </span>
+                                <span className="font-headline font-bold text-gold-accent">Contact : </span>
                                 <span className="text-white">+91 8600070638</span>
                             </p>
                             <p>
-                                <span className="text-gold-accent font-headline font-bold">Email : </span>
+                                <span className="font-headline font-bold text-gold-accent">Email : </span>
                                 <span className="text-white">kavirajverma1976@gmail.com</span>
                             </p>
                         </div>
