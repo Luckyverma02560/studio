@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -76,7 +77,7 @@ export default function Header() {
     return (
         <SheetClose asChild>
           <Link href={href} className={cn(
-            "block py-3 text-lg text-center",
+            "block py-3 text-lg text-center font-headline",
             isActive ? "text-bright-accent" : "text-foreground"
             )}>
               {label}
@@ -170,3 +171,4 @@ export default function Header() {
     </header>
   );
 }
+
