@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { FooterParticles } from './footer-particles';
 
 export default function Footer() {
   const logo = PlaceHolderImages.find(p => p.id === 'logo');
@@ -33,8 +34,11 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground/80">
-      <div className="container mx-auto px-4 py-16">
+    <footer className="relative bg-black text-primary-foreground/80 overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <FooterParticles />
+      </div>
+      <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Column 1: Logo and About */}
           <div>
@@ -106,7 +110,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-black/20 py-4">
+      <div className="bg-black/20 py-4 relative z-10">
         <div className="container mx-auto px-4 text-center text-xs text-primary-foreground/50">
           <p>Copyright © 2024 Demystify Capital Markets. All rights reserved.</p>
         </div>
