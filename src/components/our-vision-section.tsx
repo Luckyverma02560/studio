@@ -68,15 +68,15 @@ export const OurVisionSection = () => {
                         </div>
                     </div>
 
-                    <AnimateOnScroll animationClasses="animate-fade-in-up" className="relative aspect-[4/5] animation-delay-600 z-10">
-                        <div className="group perspective-1000">
+                    <AnimateOnScroll animationClasses="animate-fade-in-up" className="relative aspect-[4/5] animation-delay-600 z-10 group">
+                        <div className="relative h-full w-full rounded-2xl shadow-2xl shadow-black/50 transition-transform duration-500 ease-out group-hover:scale-105">
                              {visionImage && (
                                 <Image
                                     src={visionImage.imageUrl}
                                     alt={visionImage.description}
                                     data-ai-hint={visionImage.imageHint}
                                     fill
-                                    className="object-cover rounded-2xl shadow-2xl shadow-black/50 transition-transform duration-500 ease-out group-hover:scale-105"
+                                    className="object-cover rounded-2xl"
                                 />
                              )}
                             <div className="absolute inset-0 bg-black/20 rounded-2xl" />
