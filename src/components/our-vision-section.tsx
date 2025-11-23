@@ -20,7 +20,7 @@ const AuroraLayer = ({ style, delay }: { style: React.CSSProperties, delay: stri
 
 export const OurVisionSection = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
-    const visionImage = PlaceHolderImages.find(p => p.id === 'our-mission'); // Re-using mission image for now
+    const visionImage = PlaceHolderImages.find(p => p.id === 'our-mission');
 
     const auroraLayers = [
         { style: { width: '120vw', height: '120vh', top: '50%', left: '50%', background: 'radial-gradient(circle, rgba(0, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0) 60%)' }, delay: '0s' },
