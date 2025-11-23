@@ -13,8 +13,8 @@ export const WhoWeAreSection = () => {
         const rect = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        // Reduced amplitude by 20% from -40/12 to -32/9.6
-        const rotateX = (y / rect.height - 0.5) * -32; 
+        // The negative multipliers have been removed to make the rotation follow the mouse
+        const rotateX = (y / rect.height - 0.5) * 32; 
         const rotateY = (x / rect.width - 0.5) * 9.6;
         setRotation({ rotateX, rotateY });
     };
