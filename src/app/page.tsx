@@ -86,15 +86,11 @@ export default function Home() {
           <OurTeamSection teamMembers={teamMembers} placeholderImages={PlaceHolderImages} />
         </AnimateOnScroll>
         <div className="relative bg-[#121315] overflow-hidden">
-             <div className="absolute inset-0 z-0">
-                <FooterParticles />
-            </div>
-            <div className="relative z-10">
-                <AnimateOnScroll>
-                    <DisclaimerSection />
-                </AnimateOnScroll>
-                <Footer />
-            </div>
+            <FooterParticles />
+            <AnimateOnScroll>
+                <DisclaimerSection />
+            </AnimateOnScroll>
+            <Footer />
         </div>
       </div>
     </>
