@@ -96,11 +96,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="text-accent mr-4 shrink-0" />
-                <a href="tel:+919953580559" className="hover:text-accent transition-colors">+91 99535 80559</a>
+                <a href="tel:+918600070638" className="hover:text-accent transition-colors">+91 86000 70638</a>
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="text-accent mr-4 shrink-0" />
-                <a href="mailto:info@demystifycm.com" className="hover:text-accent transition-colors">info@demystifycm.com</a>
+                <a href="mailto:kavirajverma1976@gmail.com" className="hover:text-accent transition-colors">kavirajverma1976@gmail.com</a>
               </li>
             </ul>
           </div>
