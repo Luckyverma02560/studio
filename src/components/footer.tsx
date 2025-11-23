@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -54,7 +55,7 @@ export default function Footer() {
                 />
               </Link>
             )}
-            <p className="text-sm leading-relaxed mb-6">
+            <p className="text-sm leading-relaxed mb-6 text-foreground/70">
               Demystify Capital Markets is a premier provider of research and analytics (R&A) services for financial institutions across the globe.
             </p>
             <div className="flex space-x-4">
@@ -68,11 +69,11 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-6">Quick Links</h3>
+            <h3 className="text-lg font-bold text-gold-accent mb-6">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map(link => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm hover:text-accent transition-colors">{link.label}</Link>
+                  <Link href={link.href} className="text-sm text-foreground/90 hover:text-accent transition-colors">{link.label}</Link>
                 </li>
               ))}
             </ul>
@@ -80,11 +81,11 @@ export default function Footer() {
 
           {/* Column 3: Our Offerings */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-6">Our Offerings</h3>
+            <h3 className="text-lg font-bold text-gold-accent mb-6">Our Offerings</h3>
             <ul className="space-y-3">
               {offeringsLinks.map(link => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm hover:text-accent transition-colors">{link.label}</Link>
+                  <Link href={link.href} className="text-sm text-foreground/90 hover:text-accent transition-colors">{link.label}</Link>
                 </li>
               ))}
             </ul>
@@ -92,8 +93,8 @@ export default function Footer() {
 
           {/* Column 4: Contact Info */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-6">Contact Info</h3>
-            <ul className="space-y-4 text-sm">
+            <h3 className="text-lg font-bold text-gold-accent mb-6">Contact Info</h3>
+            <ul className="space-y-4 text-sm text-foreground/90">
               <li className="flex items-start">
                 <MapPin size={20} className="text-accent mt-1 mr-4 shrink-0" />
                 <span>Room No. 001, 1-st Floor, XXXX Residence, Sector 44, Noida - 201020</span>
