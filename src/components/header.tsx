@@ -77,7 +77,7 @@ export default function Header() {
     return (
         <SheetClose asChild>
           <Link href={href} className={cn(
-            "block py-3 text-lg text-center font-headline",
+            "block py-3 text-lg text-center font-headline font-headline",
             isActive ? "text-bright-accent" : "text-foreground"
             )}>
               {label}
@@ -155,7 +155,7 @@ export default function Header() {
           <div className="md:hidden flex-1 flex justify-end">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn('text-white hover:text-bright-accent')}>
+                <Button variant="ghost" size="icon" className={cn('text-white hover:text-bright-accent hover:bg-transparent')}>
                   <Menu size={28} />
                 </Button>
               </SheetTrigger>
