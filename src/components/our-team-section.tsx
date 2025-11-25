@@ -46,7 +46,7 @@ export const OurTeamSection = ({ teamMembers, placeholderImages }: OurTeamSectio
                 className={`animation-delay-${(index % 3) * 200}`}
                 animationClasses="animate-fade-in-up"
               >
-                <Card className="group overflow-hidden text-center bg-secondary/20 backdrop-blur-sm border border-border/10 transition-all duration-300 hover:-translate-y-2 hover:border-gold-accent/30">
+                <Card className="group overflow-hidden text-center bg-secondary/20 backdrop-blur-sm border border-border/10 transition-all duration-300 hover:-translate-y-2 hover:border-gold-accent/30 hover:shadow-lg hover:shadow-gold-accent/20">
                   <CardContent className="p-0">
                     <div className="relative aspect-square overflow-hidden">
                       <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-105">
