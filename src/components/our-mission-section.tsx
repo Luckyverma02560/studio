@@ -51,7 +51,11 @@ export const OurMissionSection = () => {
 
             <div className="relative text-center max-w-6xl mx-auto z-10">
                 <AnimateOnScroll animationClasses="animate-fade-in-up">
-                    <h2 className="section-label">Our Mission</h2>
+                    <h2 className="section-label">
+                         <span className="inline-block relative overflow-hidden">
+                           <span className="inline-block heading-sweep">Our Mission</span> 
+                        </span>
+                    </h2>
                     <h3 className="section-heading mt-4 mb-12">
                         <span className="relative inline-block">
                            Empowering Decisions with Clarity & Conviction
