@@ -41,7 +41,7 @@ export const WhoWeAreCard = ({ transform, rotation }: WhoWeAreCardProps) => {
                 </p>
                 <div className="grid md:grid-cols-2 gap-8 text-subtle-text/70 text-base leading-relaxed mt-12 animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
                     <p>
-                        Demystify Capital Markets is a premier provider of research and
+                        LoQ Capital Markets is a premier provider of research and
                         analytics (R&A) services for financial institutions across the globe. We
                         provide a broad range of services, including equity research, credit
                         research, investment banking support, and financial modeling.

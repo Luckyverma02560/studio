@@ -6,8 +6,8 @@ import Footer from '@/components/footer';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 
 export const metadata: Metadata = {
-  title: 'Demystify Capital Markets Clone',
-  description: 'A clone of the Demystify Capital Markets About Us page.',
+  title: 'LoQ Capital Markets Clone',
+  description: 'A clone of the LoQ Capital Markets About Us page.',
 };
 
 export default function RootLayout({

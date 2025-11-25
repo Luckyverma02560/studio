@@ -62,7 +62,7 @@ export const OurStorySection = () => {
                     <div className="w-24 h-0.5 bg-gold-accent mx-auto mb-8 shadow-[0_0_15px_2px_rgba(199,164,91,0.4)]" />
                     <h3 className="section-heading mb-6">From Complexity to Clarity</h3>
                     <p className="font-inter text-muted-foreground text-lg leading-relaxed">
-                        Founded in 2021 by a collective of seasoned investment bankers and research analysts, Demystify Capital Markets was born from a shared vision: to democratize access to institutional-grade financial intelligence. We witnessed firsthand the struggle for clear, independent insights amidst market noise. Our story is one of building a bridge—connecting ambition with actionable data and empowering financial institutions to navigate the complexities of capital markets with newfound confidence.
+                        Founded in 2021 by a collective of seasoned investment bankers and research analysts, LoQ Capital Markets was born from a shared vision: to democratize access to institutional-grade financial intelligence. We witnessed firsthand the struggle for clear, independent insights amidst market noise. Our story is one of building a bridge—connecting ambition with actionable data and empowering financial institutions to navigate the complexities of capital markets with newfound confidence.
                     </p>
                 </AnimateOnScroll>
             </div>

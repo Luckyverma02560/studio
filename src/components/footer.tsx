@@ -52,7 +52,7 @@ export default function Footer() {
               </Link>
             )}
             <p className="text-sm leading-relaxed mb-6 text-foreground/70">
-              Demystify Capital Markets is a premier provider of research and analytics (R&A) services for financial institutions across the globe.
+              LoQ Capital Markets is a premier provider of research and analytics (R&A) services for financial institutions across the globe.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -109,7 +109,7 @@ export default function Footer() {
       </div>
       <div className="bg-black/20 py-4">
         <div className="container mx-auto px-4 text-center text-xs text-foreground/50">
-          <p>Copyright © 2024 Demystify Capital Markets. All rights reserved.</p>
+          <p>Copyright © 2024 LoQ Capital Markets. All rights reserved.</p>
         </div>
       </div>
     </footer>
