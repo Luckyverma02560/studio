@@ -70,7 +70,7 @@ export const OurMissionSection = () => {
                                 className={`animation-delay-${index * 200}`}
                                 animationClasses="animate-fade-in-up"
                             >
-                                <div className="bg-secondary/30 backdrop-blur-sm border border-border/20 rounded-xl p-6 h-full flex flex-col items-center transform transition-transform duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-accent/10">
+                                <div className="bg-secondary/30 backdrop-blur-sm border border-border/20 rounded-xl p-6 h-full flex flex-col items-center transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#23C6D9]/20 hover:border-[#23C6D9]/40">
                                     <div className="bg-gold-accent/10 p-4 rounded-full mb-4 ring-2 ring-gold-accent/20">
                                         <Icon className="w-8 h-8 text-gold-accent" />
                                     </div>
